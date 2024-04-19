@@ -1,0 +1,50 @@
+﻿@{
+    // Layout = null; // ---> Layout kullanılmayacak
+    Layout = "_Layout"; //---> Shared>_Layout.cshtml kullanılacak
+}
+@*Model bazlı veri gönderilmesi*@
+@*@model List<MVC_TEST.Models.KitapModel>
+<div>
+    <ul>
+    @foreach(var item in Model)
+    {
+        <li>@item.KitapAdi</li>
+    }
+    </ul>
+</div>*@
+
+@*ViewBag ile veri gönderilmesi
+   -  dinamik olduğu için verinin tipi verilmelidir
+*@
+<div>
+    @ViewBag.Baslik;
+    <ul>
+
+        @foreach (var item in ViewBag.Kitap as List<MVC_TEST.Models.KitapModel>)
+        {
+                <li>@item.KitapAdi</li>
+        }
+    </ul>
+</div>
+
+<div>
+    @ViewData["Baslik"];
+    <ul>
+
+        @foreach (var item in ViewData["Kitap"] as List<MVC_TEST.Models.KitapModel>)
+        {
+            <li>@item.KitapAdi</li>
+        }
+    </ul>
+</div>
+
+<div>
+    @TempData["Baslik"];
+    <ul>
+
+        @foreach (var item in TempData["Kitap"] as List<MVC_TEST.Models.KitapModel>)
+        {
+                <li>@item.KitapAdi</li>
+        }
+    </ul>
+</div>

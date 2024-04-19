@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Razor View Örneği";
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Razor view örneği</a>.</p>
+</div>
+
+<div class="text-center">
+    @{
+        var a = 10;
+        var b = 20;
+    }
+     <b>a</b> değeri = @a
+     <br />
+     <b>b</b> değeri = @b
+     <br />
+     İki sayının toplamı <span style="color:red;font-size:larger;">@(a + b)</span>
+</div> 
